@@ -724,6 +724,16 @@ footer{
     min-height:75vh ;
 }
 
+    .grid-catalog{
+        display: grid;
+        margin-top: 0.2vh;
+        grid-gap: 1vw;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0.7vw;
+        margin: -0.7vw;
+
+    }
+
 
 
 
@@ -916,7 +926,15 @@ footer{
     min-height:75vh ;
 }
 
+    .grid-catalog{
+        display: grid;
+        margin-top: 0.2vh;
+        grid-gap: 1vw;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0.7vw;
+        margin: -0.7vw;
 
+    }
 
 
 
@@ -1129,6 +1147,20 @@ footer{
         padding: 0vw;
         font-size: 60%;
     }
+
+
+    .grid-catalog{
+        display: grid;
+        margin-top: 0.2vh;
+        grid-gap: 1vw;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0.7vw;
+        margin: -0.7vw;
+
+    }
+
+
+
 
 
 
