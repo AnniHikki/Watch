@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <title>шаблонная страница</title>
+</head>
+<body>
+    
+<header>
+
+<div class="brand">
+<a href="index.html"><img src="img/logo.png" alt=""></a>
+<a href="index.html"><h1>АниХикки</h1></a>
+</div>
+<div class="nav">
+<a href="catalog.html"><h1>Каталог</h1></a>
+<a href="index.html#news"><h1>Новинки</h1></a>
+</div>
+
+</header>
+
+<main>
+
+<div class="anime-title">   </div>
+
+
+
+
+
+
+<div class="player" id="player">
+
+
+<div id="player-container"> </div>
+
+<div class="episodes-btn-grid" id="grid"></div>
+ 
+</div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer>
+<h2 class="guarded">Ⓒ  2026 , все права защищены</h2>
+
+<a href=""><h2 class="contact">Связаться с нами</h2></a>
+
+
+</footer>
+
+
+
+
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+
+const title = document.querySelector(".anime-title")
+const btnGrid = document.querySelector(".episodes-btn-grid")
+const playerContainer = document.querySelector("#player-container")
+let chosenAnime = sessionStorage.getItem("chosenAnimeName")
+
+if (!chosenAnime && window.location.hash) {
+    // decodeURIComponent убирает %20 и другие символы, возвращая нормальный текст
+    chosenAnime = decodeURIComponent(window.location.hash.replace("#", ""))
+}
+
+
+const currentAnime = catalog.find(function(anime){
+    return anime.animeName === chosenAnime
+})
+
+    title.textContent = currentAnime.animeName
+    document.title = currentAnime.animeName
+    window.location.hash = currentAnime.animeName
+
+const uniqueKey = "episode_" + currentAnime.animeName
+const savedEpisode = localStorage.getItem(uniqueKey)
+
+function changePlayer(url) {
+    playerContainer.innerHTML = `<iframe src="${url}" id="anime-player" frameborder="0" AllowFullScreen allow="autoplay *; fullscreen *"></iframe>`
+}
+
+let activeEpisodeUrl = ""
+
+if (savedEpisode) {
+    activeEpisodeUrl = savedEpisode
+}
+else {
+    activeEpisodeUrl = currentAnime.episodes[0]
+}
+
+changePlayer(activeEpisodeUrl)
+
+currentAnime.episodes.forEach(function(episodeBtn, index){
+    let buttonClass = "episode-btn"
+
+    if (episodeBtn === activeEpisodeUrl) {
+        buttonClass = "episode-btn active-btn"
+     }
+
+
+    btnGrid.innerHTML += `
+     <div class="${buttonClass}" data-url="${episodeBtn}">${index+1}</div> 
+`
+})
+
+const allEpisodeBtns = document.querySelectorAll(".episode-btn")
+
+
+allEpisodeBtns.forEach(function(oneButton){
+    oneButton.addEventListener("click", function(){
+        const active = document.querySelector(".active-btn")
+        if (active) {
+            active.classList.remove("active-btn")
+        }
+
+        changePlayer(oneButton.dataset.url)
+        oneButton.classList.add("active-btn")
+
+        localStorage.setItem(uniqueKey, oneButton.dataset.url)
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Прошу прощения за использование js из ии
+    const container = document.getElementById('grid'); 
+
+container.addEventListener('wheel', (event) => {
+  if (event.deltaY !== 0) {
+    event.preventDefault();
+    
+    // Коэффициент скорости: 1 — стандартная, 0.5 — в два раза медленнее, 0.2 — в пять раз медленнее
+    const speedMultiplier = 0.4; 
+    
+    // Умножаем шаг прокрутки на наш коэффициент
+    container.scrollLeft += event.deltaY * speedMultiplier;
+  }
+}, { passive: false });
+</script>
+
+
+</body>
+</html>

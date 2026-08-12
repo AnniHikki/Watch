@@ -1,0 +1,2154 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(234, 234, 234);
+    scroll-behavior: smooth;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+body, html{
+    background: linear-gradient(135deg, #02061a 0%, #00040d 40%, #000000 100%);
+    background-size: 200% 200%;
+    animation: gradient 6s ease infinite;
+    min-height: 100vh;
+  
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header{
+    background: rgba(62, 62, 62, 0.2);
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    padding: 0.3vw;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+    .brand{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 90%;
+    }
+
+    header .brand h1{
+        font-weight: 1000;
+        margin-left: 0.5vw;
+    }
+
+        header img{
+            width: 2.5vw;
+            height: 5vh;
+        }
+
+
+    .nav{
+        display: flex;
+        gap: 1.5vw;
+        grid-column: 3/3;
+        margin-right: 2vw;
+        font-size: 90%;
+    }
+
+        header .nav h1{
+            font-weight: 1000;
+            text-decoration: none;
+            flex: block;
+        }
+
+        header a{
+            transition: all 1s;
+        }
+
+            header a:hover{
+               transform: scale(1.05);
+
+
+                }
+
+
+
+
+.hero-section{
+    width: 85vw;
+    height: 27vw;
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+    margin: auto;
+    margin-top: 3.4vw;
+    border-radius: 1.3vw;
+    padding: 2vh;
+    background-repeat: no-repeat;  
+    background-position: center;   
+    background-size: cover;  
+    background-image: 
+    linear-gradient(  to right,   rgba(10, 25, 47, 0.92) 0%,      rgba(5, 18, 38, 0.88) 25%,   rgba(9, 22, 40, 0.8) 38%,  rgba(9, 22, 40, 0.78) 40%, rgba(6, 20, 41, 0.75) 50%,  transparent 100%  ),      
+    url('../img/fr.jpg');
+}
+
+    .hero-info{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        width: 42%;
+        cursor: default;
+        padding-left: 1vw;
+    }
+
+    .hero-name{
+        font-weight: 1000;
+        text-align: justify;
+        margin-top: 2vw;
+        font-size: 225%;
+        cursor: default;
+    }
+    .hero-title{
+        display: flex;
+        flex-wrap: wrap;     
+        margin-top: 1.2vw;
+        font-weight: 500;
+        font-size: 125%;
+        color: rgb(156, 156, 156);
+        text-align: justify;
+        cursor: default;
+    }
+
+    .hero-watch-button {
+        display: flex;
+        background: rgb(0, 164, 0);
+        width: 10vw;
+        height: 4vh;
+        padding: 1.1vw;
+        border-radius: 2.1vw;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1vw;
+        transition: 0.6s all;
+        font-weight: 1000;
+        font-size: 145%;
+        cursor: pointer;
+    }
+
+        .hero-watch-button:hover{
+            background-color: rgb(0, 186, 0);
+        }
+
+        .hero-watch-button a{
+            font-weight: 1000;
+            font-size: 150%;
+        }
+
+
+
+
+main{
+    background: rgba(62, 62, 62, 0.2);
+    border-radius: 1.3vw;
+    width: 85vw;
+    height: auto;
+    margin: auto;
+    margin-top:3.2vh;
+    padding: 2vh;
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.main-catalog{
+    background: rgba(62, 62, 62, 0.2);
+    border-radius: 1.3vw;
+    width: 85vw;
+    height: auto;
+    min-height: 70vh;
+    margin: auto;
+    margin-top:3.2vh;
+    padding: 2vh;
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+    .fzagolovok{
+        font-size: 200%;
+        font-weight: 800;
+        text-align: center;
+        cursor: default;
+    }
+
+    .zagolovok{
+        font-size: 200%;
+        font-weight: 800;
+        text-align: center;
+        cursor: default;
+        margin-top: 1.2vh;
+    }
+
+        .news-grid{
+            display: grid;
+            margin-top: 1vh;
+            grid-gap: 1vw;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+
+            .news-grid-card{
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+                height: 55vh;
+                border-radius: 1.5vw;
+                padding: 0.6vw;
+                transition: all 0.5s;
+                box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+                background-repeat: no-repeat;
+                background-position: center center;  
+                background-size: cover; 
+                cursor: pointer;
+                will-change: transform; /* Подготавливает GPU к анимации */ backface-visibility: hidden; /* Убирает мерцание и зазоры */ transform: translateZ(0); /* Включает 3D-ускорение */
+                outline: 0.1px solid rgba(0, 0, 0, 1);  outline-offset: -0.1px;
+                
+                
+            }
+
+                    .news-grid-card:hover{
+                        transform: scale(1.04);
+                    }
+
+
+                .news-grid-card-rating{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgb(0, 164, 0);
+                    padding: 0.33vw;
+                    border-radius: 1vw;
+                    width: 5vw;
+                    height: 3vh;
+                    justify-content: center;
+                    justify-self: start;
+                    align-self: start;
+                    font-weight: 1000;
+                    font-size: 125%;
+                }
+
+
+                .news-grid-card-name{
+                    display: flex;
+                    text-align: center;
+                    font-weight: 1000;
+                    font-size: 115%;
+                    align-self: end;
+                    justify-self: center;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+    .grid-catalog{
+        display: grid;
+        margin-top: 0.2vh;
+        grid-gap: 1vw;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 0.7vw;
+        margin: -0.7vw;
+
+    }
+
+
+        .grid-catalog-item{
+                display: grid;
+                cursor: pointer;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto auto 1fr;
+                grid-gap: 0.5vw;
+                height: 44vh;
+                border-radius: 1.2vw;
+                padding: 0.5vw;
+                transition: all 0.5s;
+                box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.2);
+                background-repeat: no-repeat;    background-position: center center;      background-size: cover;
+                transition: 0.5s all; 
+                z-index: 1000;
+                position: relative;
+                will-change: transform; /* Подготавливает GPU к анимации */ backface-visibility: hidden; /* Убирает мерцание и зазоры */ transform: translateZ(0); /* Включает 3D-ускорение */
+                outline: 0.1px solid rgba(0, 0, 0, 1);  outline-offset: -0.1px;
+        }
+
+            .grid-catalog-item:hover{
+                transform: scale(1.04);
+                z-index: 1000;
+                position: relative;
+            }
+
+            .episodes-amount{
+                background-color: rgba(0, 0, 0, 0.8);
+                border-radius: 0.4vw;
+                text-align: center;
+                width: 6.2vw;
+                height: 3.6vh;
+                font-size: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(184, 184, 184);
+                grid-column: 1/2;
+                grid-row: 1/1;
+                font-weight: 600;
+            }
+
+            .catalog-item-rating{
+                    display: flex;
+                    align-items: center;
+                    background-color: rgb(0, 164, 0);
+                    padding: 0.33vw;
+                    border-radius: 1vw;
+                    width: 4.5vw;
+                    justify-content: center;
+                    justify-self: end;
+                    align-self: start;
+                    font-weight: 1000;
+                    font-size: 110%;
+                    grid-row: 1/3;
+            }
+
+            .catalog-item-name{
+                grid-column: 1/-1;
+                display: flex;
+                justify-self: center;
+                align-self: flex-end;
+                text-align: center;
+                font-weight: 1000;
+                font-size: 110%;
+                margin-bottom: 0.2vh;
+            }
+
+
+ 
+            
+
+
+
+.anime-title{
+    font-size: 200%;
+    font-weight: 1000;
+    text-align: center;
+}
+
+
+.player iframe{
+    margin: auto;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    width: 100%;
+    height: 42vw;
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.2);
+    margin-top: 1vh;
+}
+
+.episodes-btn-grid{
+    display: flex;
+    width: 98%;
+    grid-gap: 0.9vw;
+    background-color: black;
+    border-bottom-left-radius: 1.5vw;
+    border-bottom-right-radius: 1.5vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.2);
+    padding: 0.7vw 1vw 0.5vw 0.75vw;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    scroll-behavior: auto;
+    transition: 0.5s ease;
+    margin-top: -0.29vw;
+    user-select: none; 
+}
+
+    .episodes-btn-grid:hover{
+        scrollbar-color: #00A2E8 transparent; 
+    }
+
+    .episode-btn{
+        background: rgba(62, 62, 62, 0.45);
+        box-shadow: 0px 0px 50px 0px rgba(52, 81, 102, 0.2),
+                    0px 0px 50px 0px rgba(52, 81, 102, 0.1);
+        display: flex;
+        border-radius: 0.67vw;
+        justify-content: center;
+        align-items: center;
+        height: 6vh;
+        font-weight: 1000;
+        transition: 0.5s all;
+        flex: 0 0 auto;
+        width: 6.067vw;
+        cursor: default;
+        cursor: pointer;
+    }
+
+        .episode-btn:hover{
+            transform: scale(1.05);
+            background: rgba(62, 62, 62, 0.58);
+        }
+
+            .active-btn{
+                background-color: rgb(0, 134, 0);
+                transform: scale(1.05);
+                cursor: default;
+            }
+            .active-btn:hover{
+                background-color: rgb(0, 134, 0);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+#search-input{
+    background: rgba(62, 62, 62, 0.05);
+    border-radius: 1.3vw;
+    width: 85vw;
+    height: 3.5vh;
+    margin: auto;
+    margin-top:3vh;
+    padding: 2vh;
+    box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-self: center;
+    font-weight: 1000;
+    font-size: 130%;
+    outline: none;
+}
+
+#search-input:focus{
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+
+.genre-btn-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    width: 87vw;
+    margin: 0.5vw auto 0.5vw auto;
+    grid-gap: 0.5vw;
+    margin-bottom: -2.5vh;
+    
+}
+ 
+    .genre-btn{
+        height: 6.67vh;
+        box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(62, 62, 62, 0.05);
+        border-radius: 1.15vw;
+        padding: 0.5vw;
+        font-weight: 1000;
+        transition: 0.5s;
+        font-size: 95%;
+    }
+
+
+
+    .genre-btn:hover{
+        background: rgba(62, 62, 62, 0.25);
+    }
+
+    .active-g-btn:hover{
+        background-color: rgba(0, 134, 0, 0.3);
+    }
+
+    .active-g-btn{
+        background-color: rgba(0, 134, 0, 0.3);
+    }
+
+
+
+
+    
+
+.recomendation-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.4vw;
+    padding: 1vw;
+}
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 62vh;
+        box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+        padding: 0.8vw;
+        grid-template-rows: repeat(2, 1fr);
+        border-radius: 1.2vw;
+        cursor: pointer;
+        background-repeat: no-repeat;    background-position: center center;      background-size: cover;
+        transition: 0.5s all;
+        will-change: transform; /* Подготавливает GPU к анимации */ backface-visibility: hidden; /* Убирает мерцание и зазоры */ transform: translateZ(0); /* Включает 3D-ускорение */
+        outline: 0.1px solid rgba(0, 0, 0, 1);  outline-offset: -0.1px;
+         
+    }
+
+        .recomendation-grid-item:hover{
+            transform: translateY(-0.8vw);
+        }
+
+
+        .item-rating{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 164, 0);
+            padding: 0.33vw;
+            border-radius: 0.97vw;
+            width: 6vw;
+            height: 3.5vh;
+            justify-content: center;
+            justify-self: end;
+            align-self: start;
+            font-weight: 1000;
+            font-size: 140%;
+        }
+
+        .recomendation-name{
+            display: flex;
+            justify-self: center;
+            align-self: flex-end;
+            text-align: center;
+            font-size: 135%;
+            font-weight: 800;
+            margin-bottom: 0.2vh;
+        }
+
+
+
+
+
+
+footer{
+    background-color: #000000;
+    height: 3vh;
+    margin-top: 5vh;
+    display: flex;
+    padding-left: 1vw;
+}
+    footer h2{
+        font-size: 95%;
+        color: rgb(58, 58, 58);
+        box-shadow: 0px 0px 50px 0px rgba(36, 55, 69, 0.3);
+    }
+
+    .guarded{
+        display: flex;
+        justify-self: end;
+    }
+
+    .contact{
+        display: flex;
+        justify-self: end;
+        align-self: flex-end;
+        margin-left: 4vw;
+    }
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 250px) {
+
+    .brand{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 40%;
+    }
+
+        header img{
+            width: 4.5vw;
+            height: 6vw;
+        }
+    
+
+        header .nav{
+            font-size: 40%;
+        }
+        
+
+.hero-section{
+    margin-top: 6vw;
+    padding: 1vw;
+    width: 92vw;
+    height: 40vw;
+    margin-bottom: -2vh;
+}
+
+
+
+
+    .hero-name{
+        text-align: justify;
+        margin-top: 3.5vw;
+        font-size: 60%;
+    }
+    .hero-title{
+        margin-top: 0.1vw;
+        font-size: 42%;
+    }
+
+    .hero-watch-button {
+        width: 16vw;
+        height: 5vw;
+        padding: 1vw;
+        font-size: 50%;
+        margin-top: 1.5vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 90%;
+        margin-top: -2.5vw;
+    }
+
+    .zagolovok{
+        font-size: 90%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 38vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 7vw;
+                    height: 3.5vw;
+                    font-size: 40%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 38%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 50vw;
+        padding: 1.3vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 8.4vw;
+            height: 3vw;
+            font-size: 45%;
+        }
+
+        .recomendation-name{
+            font-size: 65%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 2vw;
+    width: 88.5vw;
+    height: 2.5vh;
+    padding: 2.1vw;
+    font-size: 70%;
+    margin-bottom: 1vw;
+}
+
+    .genre-btn-grid{
+        width: 92%;
+    }
+ 
+    .genre-btn{
+        height: 8.5vw;
+        border-radius: 1.5vw;
+        padding: 0vw;
+        font-size: 40%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 32vw;
+                padding: 0.5vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 6vw;
+                padding: 0.5vw;
+                height: 4.5vw;
+                font-size: 15%;
+                border-radius: 1vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 5.7vw;
+                    height: 3vw;  
+                    font-size: 20%;
+            }
+
+            .catalog-item-name{
+                font-size: 27%;
+            }
+
+
+.anime-title{
+    font-size: 75%;
+    margin-top: -2vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1.3vw;
+    margin-top: -1.2vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 6vw;
+        font-size: 50%;
+        width: 6vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+
+
+
+
+@media (min-width: 390px) {
+
+    .brand{
+        font-size: 45%;
+    }
+
+        header img{
+            width: 4.5vw;
+            height: 6vw;
+        }
+    
+
+        header .nav{
+            font-size: 45%;
+        }
+        
+
+.hero-section{
+    margin-top: 6vw;
+    padding: 1vw;
+    width: 91vw;
+    height: 35vw;
+    margin-bottom: -2vh;
+}
+
+
+
+
+    .hero-name{
+        text-align: justify;
+        margin-top: 3vw;
+        font-size: 65%;
+    }
+    .hero-title{
+        margin-top: 0.2vw;
+        font-size: 45%;
+    }
+
+    .hero-watch-button {
+        width: 15vw;
+        height: 4vw;
+        padding: 1vw;
+        font-size: 55%;
+        margin-top: 1.5vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 90%;
+        margin-top: -2.5vw;
+    }
+
+    .zagolovok{
+        font-size: 90%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 32vw;
+                padding: 0.5vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 6vw;
+                    height: 2.7vw;
+                    font-size: 40%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 42%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 43vw;
+        padding: 1.3vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 8.4vw;
+            height: 2.8vw;
+            font-size: 45%;
+        }
+
+        .recomendation-name{
+            font-size: 65%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 2vw;
+    width: 88.5vw;
+    height: 2.5vh;
+    padding: 2.1vw;
+    font-size: 70%;
+    margin-bottom: 1vw;
+}
+
+    .genre-btn-grid{
+        width: 92%;
+    }
+ 
+    .genre-btn{
+        height: 8.5vw;
+        border-radius: 1.5vw;
+        padding: 0vw;
+        font-size: 40%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 28vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 7vw;
+                padding: 0.5vw;
+                height: 3vw;
+                font-size: 10%;
+                border-radius: 1vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 5.7vw;
+                    height: 3vw;  
+                    font-size: 20%;
+            }
+
+            .catalog-item-name{
+                font-size: 27%;
+            }
+
+
+.anime-title{
+    font-size: 75%;
+    margin-top: -2vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1.3vw;
+    margin-top: -1.2vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 6vw;
+        font-size: 50%;
+        width: 6vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+
+@media (min-width: 700px) {
+
+    .brand{
+        font-size: 60%;
+    }
+
+        header img{
+            width: 3.3vw;
+            height: 4vw;
+        }
+    
+
+        header .nav{
+            font-size: 60%;
+        }
+        
+
+.hero-section{
+    margin-top: 6vw;
+    padding: 1vw;
+    width: 87.5vw;
+    height: 27vw;
+    margin-bottom: -2vh;
+}
+
+
+
+
+    .hero-name{
+        text-align: justify;
+        margin-top: 2vw;
+        font-size: 100%;
+    }
+    .hero-title{
+        margin-top: 0.2vw;
+        font-size: 70%;
+    }
+
+    .hero-watch-button {
+        width: 12vw;
+        height: 3.2vw;
+        padding: 1vw;
+        font-size: 85%;
+        margin-top: 1.5vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 115%;
+        margin-top: -1vw;
+    }
+
+    .zagolovok{
+        font-size: 115%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 33vw;
+                padding: 0.67vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 5vw;
+                    height: 2vw;
+                    font-size: 60%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 67%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 40vw;
+        padding: 1vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 7vw;
+            height: 2.5vw;
+            font-size: 70%;
+        }
+
+        .recomendation-name{
+            font-size: 80%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 2vw;
+    width: 86vw;
+    height: 2.5vh;
+    padding: 2vw;
+    font-size: 90%;
+    margin-bottom: 1vw;
+}
+
+    .genre-btn-grid{
+        width: 89%;
+    }
+ 
+    .genre-btn{
+        height: 6vw;
+        border-radius: 1.5vw;
+        padding: 0vw;
+        font-size: 60%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 26.7vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 5vw;
+                padding: 0.5vw;
+                height: 2.5vw;
+                font-size: 44%;
+                border-radius: 0.9vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 4.5vw;
+                    height: 2.1vw;  
+                    font-size: 50%;
+            }
+
+            .catalog-item-name{
+                font-size: 55%;
+            }
+
+
+.anime-title{
+    font-size: 105%;
+    margin-top: -1vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1vw;
+    margin-top: -0.6vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 4.3vw;
+        font-size: 50%;
+        width: 5.89vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+
+@media (min-width: 1000px) {
+
+    .brand{
+        font-size: 65%;
+    }
+
+        header img{
+            width: 3vw;
+            height: 3.5vw;
+        }
+    
+
+        header .nav{
+            font-size: 65%;
+        }
+        
+
+.hero-section{
+    margin-top: 6vw;
+    padding: 1vw;
+    width: 86vw;
+    height: 23vw;
+    margin-bottom: -1vh;
+}
+
+
+
+
+    .hero-name{
+        text-align: justify;
+        margin-top: 2vw;
+        font-size: 135%;
+    }
+    .hero-title{
+        margin-top: 0.5vw;
+        font-size: 87%;
+    }
+
+    .hero-watch-button {
+        width: 11vw;
+        height: 2vw;
+        padding: 1vw;
+        border-radius: 1.4vw;
+        font-size: 100%;
+        margin-top: 1.5vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 140%;
+        margin-top: -0.5vw;
+    }
+
+    .zagolovok{
+        font-size: 140%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 37vw;
+                padding: 0.67vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 5vw;
+                    height: 1.7vw;
+                    border-radius: 0.9vw;
+                    font-size: 75%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 85%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 42vw;
+        padding: 1vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 6vw;
+            height: 2vw;
+            font-size: 85%;
+        }
+
+        .recomendation-name{
+            font-size: 100%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 1.8vw;
+    width: 85vw;
+    height: 2.3vh;
+    padding: 2vw;
+    font-size: 110%;
+    margin-bottom: 0.6vw;
+}
+
+    .genre-btn-grid{
+        width: 89%;
+    }
+ 
+    .genre-btn{
+        height: 5vw;
+        border-radius: 1.5vw;
+        padding: 0vw;
+        font-size: 75%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 25vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 5vw;
+                padding: 0.5vw;
+                height: 1.8vw;
+                font-size: 55%;
+                border-radius: 0.9vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 4vw;
+                    height: 1.8vw;  
+                    font-size: 60%;
+                    border-radius: 0.8vw;
+            }
+
+            .catalog-item-name{
+                font-size: 75%;
+            }
+
+
+.anime-title{
+    font-size: 125%;
+    margin-top: -1vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1vw;
+    margin-top: -0.5vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 3.5vw;
+        font-size: 70%;
+        width: 5.5vw;
+        border-radius: 0.8vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+
+
+
+@media (min-width: 1300px) {
+
+    .brand{
+        font-size: 80%;
+    }
+
+        header img{
+            width: 2.9vw;
+            height: 3.7vw;
+        }
+    
+
+        header .nav{
+            font-size: 80%;
+        }
+        
+
+.hero-section{
+    margin-top: 6vw;
+    padding: 1vw;
+    width: 86vw;
+    height: 25vw;
+    margin-bottom: -1vh;
+}
+
+
+
+
+    .hero-name{
+        text-align: justify;
+        margin-top: 2vw;
+        font-size: 170%;
+    }
+    .hero-title{
+        margin-top: 1vw;
+        font-size: 120%;
+    }
+
+    .hero-watch-button {
+        width: 12.5vw;
+        height: 2.5vw;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-size: 140%;
+        margin-top: 2vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 185%;
+        margin-top: -0.5vw;
+    }
+
+    .zagolovok{
+        font-size: 185%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 33.5vw;
+                padding: 0.67vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 5vw;
+                    height: 1.7vw;
+                    border-radius: 0.9vw;
+                    font-size: 100%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 115%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 40vw;
+        padding: 1vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 5.4vw;
+            height: 1.8vw;
+            font-size: 111%;
+        }
+
+        .recomendation-name{
+            font-size: 135%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 1.8vw;
+    width: 85vw;
+    height: 2.3vh;
+    padding: 2vw;
+    font-size: 145%;
+    margin-bottom: 0.3vw;
+}
+
+    .genre-btn-grid{
+        width: 88%;
+    }
+ 
+    .genre-btn{
+        height: 4.5vw;
+        border-radius: 1.5vw;
+        padding: 0vw;
+        font-size: 90%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 26vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 4.5vw;
+                padding: 0.5vw;
+                height: 1.5vw;
+                font-size: 65%;
+                border-radius: 0.8vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 3.5vw;
+                    height: 1.5vw;  
+                    font-size: 75%;
+                    border-radius: 0.8vw;
+            }
+
+            .catalog-item-name{
+                font-size: 95%;
+            }
+
+
+.anime-title{
+    font-size: 165%;
+    margin-top: -0.3vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1vw;
+    margin-top: -0.5vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 3.4vw;
+        font-size: 90%;
+        width: 6vw;
+        border-radius: 0.8vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+
+
+
+@media (min-width: 1440px) {
+
+    .brand{
+        font-size: 95%;
+    }
+
+        header img{
+            width: 2.9vw;
+            height: 3.7vw;
+        }
+    
+
+        header .nav{
+            font-size: 95%;
+        }
+        
+
+.hero-section{
+    margin-top: 6vw;
+    padding: 1vw;
+    width: 86vw;
+    height: 25vw;
+    margin-bottom: -1vh;
+}
+
+
+
+
+    .hero-name{
+        text-align: justify;
+        margin-top: 2vw;
+        font-size: 185%;
+    }
+    .hero-title{
+        margin-top: 1vw;
+        font-size: 125%;
+    }
+
+    .hero-watch-button {
+        width: 12.5vw;
+        height: 2.5vw;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-size: 140%;
+        margin-top: 2vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 185%;
+        margin-top: -0.5vw;
+    }
+
+    .zagolovok{
+        font-size: 185%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 35vw;
+                padding: 0.67vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 5vw;
+                    height: 1.7vw;
+                    border-radius: 0.9vw;
+                    font-size: 110%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 125%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 40vw;
+        padding: 1vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 5.4vw;
+            height: 1.8vw;
+            font-size: 111%;
+        }
+
+        .recomendation-name{
+            font-size: 135%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 1.8vw;
+    width: 85vw;
+    height: 2.3vh;
+    padding: 2vw;
+    font-size: 145%;
+    margin-bottom: 0.13vw;
+}
+
+    .genre-btn-grid{
+        width: 88%;
+    }
+ 
+    .genre-btn{
+        height: 4.8vw;
+        border-radius: 1.5vw;
+        padding: 0vw;
+        font-size: 95%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 26vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 5vw;
+                padding: 0.5vw;
+                height: 1.5vw;
+                font-size: 75%;
+                border-radius: 0.8vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 4vw;
+                    height: 1.5vw;  
+                    font-size: 85%;
+                    border-radius: 0.8vw;
+            }
+
+            .catalog-item-name{
+                font-size: 110%;
+            }
+
+
+.anime-title{
+    font-size: 180%;
+    margin-top: -0.3vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1vw;
+    margin-top: -0.5vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 4vw;
+        font-size: 115%;
+        width: 6.5vw;
+        border-radius: 0.8vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+
+
+@media (min-width: 1600px) {
+
+    .brand{
+        font-size: 105%;
+    }
+
+        header img{
+            width: 3vw;
+            height: 3.5vw;
+        }
+    
+
+        header .nav{
+            font-size: 105%;
+        }
+        
+
+.hero-section{
+    margin-top: 4vw;
+    padding: 1vw;
+    width: 86vw;
+    height: 25vw;
+    margin-bottom: -1vh;
+}
+
+
+
+
+    .hero-name{
+        margin-top: 1.5vw;
+        font-size: 210%;
+    }
+    .hero-title{
+        margin-top: 0.4vw;
+        font-size: 140%;
+    }
+
+    .hero-watch-button {
+        width: 12vw;
+        height: 2.5vw;
+        padding: 1vw;
+        border-radius: 1.6vw;
+        font-size: 165%;
+        margin-top: 2vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 200%;
+        margin-top: -0.35vw;
+    }
+
+    .zagolovok{
+        font-size: 200%;
+    }
+
+        .news-grid{
+            margin-top: 1vw;
+        }
+
+
+            .news-grid-card{
+                height: 32.5vw;
+                padding: 0.67vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 4.5vw;
+                    height: 1.7vw;
+                    border-radius: 0.9vw;
+                    font-size: 125%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 135%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 40vw;
+        padding: 1vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 5.5vw;
+            height: 2vw;
+            font-size: 125%;
+        }
+
+        .recomendation-name{
+            font-size: 155%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+
+
+
+
+
+#search-input{
+    border-radius: 1.5vw;
+    width: 84vw;
+    height: 2.3vh;
+    padding: 2vw;
+    font-size: 145%;
+    margin-bottom: 0.2vw;
+}
+
+    .genre-btn-grid{
+        width: 87.5%;
+    }
+ 
+    .genre-btn{
+        height: 4.5vw;
+        border-radius: 1.35vw;
+        padding: 0vw;
+        font-size: 105%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 25vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 4.2vw;
+                padding: 0.5vw;
+                height: 1.5vw;
+                font-size: 85%;
+                border-radius: 0.8vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 4vw;
+                    height: 1.5vw;  
+                    font-size: 95%;
+                    border-radius: 0.7vw;
+            }
+
+            .catalog-item-name{
+                font-size: 120%;
+            }
+
+
+.anime-title{
+    font-size: 200%;
+    margin-top: -0.3vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1vw;
+    margin-top: -0.5vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 4vw;
+        font-size: 115%;
+        width: 6.5vw;
+        border-radius: 0.8vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+
+}
+
+@media (min-width: 1900px) {
+
+    .brand{
+        font-size: 120%;
+    }
+
+        header img{
+            width: 3vw;
+            height: 3.35vw;
+        }
+    
+
+        header .nav{
+            font-size: 120%;
+        }
+        
+
+.hero-section{
+    margin-top: 4vw;
+    padding: 1vw;
+    width: 86vw;
+    height: 25vw;
+    margin-bottom: -1vh;
+}
+
+
+
+
+    .hero-name{
+        margin-top: 1.5vw;
+        font-size: 225%;
+    }
+    .hero-title{
+        margin-top: 0.4vw;
+        font-size: 160%;
+    }
+
+    .hero-watch-button {
+        width: 12vw;
+        height: 2.5vw;
+        padding: 1vw;
+        border-radius: 1.6vw;
+        font-size: 185%;
+        margin-top: 2vh;
+
+    }
+
+
+    
+.fzagolovok{
+        font-size: 235%;
+        margin-top: -0.35vw;
+    }
+
+    .zagolovok{
+        font-size: 235%;
+    }
+
+        .news-grid{
+            margin-top: 1.2vw;
+        }
+
+
+            .news-grid-card{
+                height: 32.5vw;
+                padding: 0.67vw;
+            }
+
+
+
+                .news-grid-card-rating{
+                    width: 4.5vw;
+                    height: 1.7vw;
+                    border-radius: 0.9vw;
+                    font-size: 135%;
+
+                }
+
+
+                .news-grid-card-name{
+                    font-size: 145%;
+                    margin-bottom: 0.5vw;
+                    
+                }
+
+
+
+    .recomendation-grid-item{
+        display: grid;
+        height: 40vw;
+        padding: 1vw;
+         
+    }
+
+        .item-rating{
+            padding: 0.33vw;
+            width: 5.5vw;
+            height: 2vw;
+            font-size: 145%;
+        }
+
+        .recomendation-name{
+            font-size: 175%;
+        }
+
+.main-catalog{
+    min-height:75vh ;
+}
+
+footer h2{
+    font-size: 175%;
+}
+
+
+
+
+#search-input{
+    border-radius: 1.5vw;
+    width: 84vw;
+    height: 2.3vh;
+    padding: 2vw;
+    font-size: 165%;
+    margin-bottom: 0.2vw;
+}
+
+    .genre-btn-grid{
+        width: 87.5%;
+    }
+ 
+    .genre-btn{
+        height: 4.5vw;
+        border-radius: 1.3vw;
+        padding: 0vw;
+        font-size: 115%;
+    }
+
+
+
+
+        .grid-catalog-item{
+                grid-gap: 0vw;
+                height: 25vw;
+                padding: 0.6vw;
+        }
+
+
+
+            .episodes-amount{
+                width: 4.2vw;
+                padding: 0.5vw;
+                height: 1.5vw;
+                font-size: 98%;
+                border-radius: 0.67vw;
+            }
+
+            .catalog-item-rating{
+                    padding: 0.33vw;
+                    width: 4vw;
+                    height: 1.5vw;  
+                    font-size: 105%;
+                    border-radius: 0.7vw;
+            }
+
+            .catalog-item-name{
+                font-size: 140%;
+            }
+
+
+.anime-title{
+    font-size: 225%;
+    margin-top: -0.3vw;
+}
+
+
+.episodes-btn-grid{
+    grid-gap: 1vw;
+    margin-top: -0.5vw;
+}
+
+
+    .episode-btn{
+        border-radius: 1vw;
+        height: 4vw;
+        font-size: 145%;
+        width: 6.5vw;
+        border-radius: 0.8vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.5vw;        
+    }
+
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <title>Каталог</title>
+</head>
+<body>
+    
+
+
+<header>
+
+<div class="brand">
+<a href="index.html"><img src="img/logo.png" alt=""></a>
+<a href="index.html"><h1>АниХикки</h1></a>
+</div>
+<div class="nav">
+<a href="#"><h1>Каталог</h1></a>
+<a href="index.html#news"><h1>Новинки</h1></a>
+</div>
+
+</header>
+
+
+
+
+
+
+
+<input type="text" id="search-input" autocomplete="off" placeholder="Введите название аниме...">
+
+
+
+<div class="genre-btn-grid">
+<button class="genre-btn active-g-btn">Все жанры</button>
+<button class="genre-btn">Исекай</button>
+<button class="genre-btn">Драма</button>
+<button class="genre-btn">Романтика</button>
+<button class="genre-btn">Сёнен</button>
+<button class="genre-btn">Психологическое</button>
+<button class="genre-btn">Экшен</button>
+</div>
+
+
+<div class="main-catalog">
+
+
+
+
+<div class="grid-catalog">
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+<h2 class="guarded">Ⓒ  2026 , все права защищены</h2>
+
+<a href=""><h2 class="contact">Связаться с нами</h2></a>
+
+
+</footer>
+
+
+
+
+
+
+
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+ <script> 
+
+const inputBar = document.querySelector("#search-input")
+const allGenresBtn = document.querySelectorAll(".genre-btn")
+const catalogGrid = document.querySelector(".grid-catalog")
+
+let currentSearchText = ""
+let currentSelectedGenre = "Все жанры"
+
+inputBar.addEventListener("input", function(){
+  currentSearchText = inputBar.value.toLowerCase()
+  applyFilters()
+})
+
+allGenresBtn.forEach(function(btn){
+
+  btn.addEventListener("click", function(){
+
+    const activeGBtn = document.querySelector(".active-g-btn")
+    activeGBtn.classList.remove("active-g-btn")
+
+    const clickedGenre = btn.textContent
+    currentSelectedGenre = clickedGenre
+    btn.classList.add("active-g-btn")
+    applyFilters()
+  })
+})
+
+function applyFilters(){
+  const finalResult = catalog.filter(function(anime){
+    const titleLowCase = anime.animeName.toLowerCase()
+    return titleLowCase.includes(currentSearchText)
+    &&
+    (anime.genre.includes(currentSelectedGenre) || currentSelectedGenre === "Все жанры")
+
+
+})
+
+
+    finalResult.sort(function(a, b){
+      return b.rating - a.rating
+    })
+  
+      renderCatalog(finalResult)
+
+
+}
+
+function renderCatalog(massive){
+  catalogGrid.innerHTML = ""
+  massive.forEach(function(anime){
+
+    catalogGrid.innerHTML += `
+      <div class="grid-catalog-item" data-name="${anime.animeName}"  style="background-image:  linear-gradient( to top,  rgba(0, 0, 0, 1) 0%,    rgba(32, 32, 32, 1) 20%, rgba(32, 32, 32, 0.9) 33%  ,transparent 75%), 
+                          url('${anime.poster}');">
+
+        <div class="catalog-item-rating">★ ${anime.rating}</div>
+        <div class="episodes-amount">${anime.episodesAmount} серий</div>
+        <div class="catalog-item-name">${anime.animeName}</div>
+
+</div> `
+
+})
+
+
+
+initCardClick()  
+}
+
+applyFilters()
+
+function initCardClick() {
+  const allCards = document.querySelectorAll(".grid-catalog-item")
+  allCards.forEach(function(oneCard){
+    oneCard.addEventListener("click", function(){
+      const animeName = oneCard.dataset.name
+      sessionStorage.setItem("chosenAnimeName", animeName)
+      window.location.href = "player.html#" + encodeURIComponent(animeName)
+    })
+  })
+}
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

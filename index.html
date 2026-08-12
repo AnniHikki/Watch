@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АниХикки</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+</head>
+<body>
+    
+<header>
+
+<div class="brand">
+<a href="#"><img src="img/logo.png" alt=""></a>
+<a href="#"><h1>АниХикки</h1></a>
+</div>
+<div class="nav">
+<a href="catalog.html"><h1>Каталог</h1></a>
+<a href="#news"><h1>Новинки</h1></a>
+</div>
+
+</header>
+
+
+<div class="hero-section">
+<div class="hero-info">
+<h2 class="hero-name">Провожающая в последний путь Фрирен</h2>
+
+<p class="hero-title">После победы над Повелителем демонов эльфийка Фрирен отправляется в долгое путешествие, чтобы переосмыслить время и отношения, которые
+    она так легко принимала как должное
+</p>
+<div class="hero-watch-button" data-name="Провожающая в последний путь Фрирен">▶ Смотреть</div>
+
+
+</div>
+</div>
+
+
+
+<main>
+
+
+<h2 class="fzagolovok" id="news">Топовые новинки лета</h2>
+
+<div class="news-grid"> 
+
+</div>
+
+
+<h2 class="zagolovok">Рекомендуем к просмотру</h2>
+
+
+<div class="recomendation-grid">
+
+
+</div>
+
+
+
+
+
+
+</main>
+
+
+
+<footer>
+<h2 class="guarded">Ⓒ  2026 , все права защищены</h2>
+
+<a href=""><h2 class="contact">Связаться с нами</h2></a>
+
+
+</footer>
+
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+
+const recomendationGrid = document.querySelector(".recomendation-grid")
+const newsGrid = document.querySelector(".news-grid")
+
+
+renderRecomendationCatalog(recomendationMassive)
+renderNewsCatalog(newsMassive)
+
+
+
+
+
+
+
+
+function renderNewsCatalog(massive){
+      newsGrid.innerHTML = ""
+  massive.forEach(function(anime){
+
+    newsGrid.innerHTML += `
+<div class="news-grid-card" data-name="${anime.animeName}" style="background-image: linear-gradient(    to top,   rgba(0, 0, 0, 0.96) 0%,   rgba(32, 32, 32, 0.98) 20%,     transparent 60%),                   
+                        url('${anime.poster}');">
+        <div class="news-grid-card-rating">★ ${anime.rating}</div>
+        <div class="news-grid-card-name">${anime.animeName}</div> 
+</div>
+    `
+
+})
+
+
+
+initCardClick()  
+}
+
+
+
+
+function renderRecomendationCatalog(massive){
+  recomendationGrid.innerHTML = ""
+  massive.forEach(function(anime){
+
+    recomendationGrid.innerHTML += `
+
+<div class="recomendation-grid-item" data-name="${anime.animeName}" style="background-image:  linear-gradient( to top,  rgba(0, 0, 0, 1) 0%,    rgba(32, 32, 32, 0.98) 10%, rgba(32, 32, 32, 0.95) 20%  ,transparent 60%), 
+                          url('${anime.poster}');">
+
+        <div class="item-rating">★ ${anime.rating}</div>
+        <div class="recomendation-name">${anime.animeName}</div>
+
+</div>
+    `
+
+})
+
+
+
+initCardClick()  
+}
+
+
+
+
+
+
+
+function initCardClick() {
+  const allCards = document.querySelectorAll(".recomendation-grid-item, .news-grid-card, .hero-watch-button")
+  allCards.forEach(function(oneCard){
+    oneCard.addEventListener("click", function(){
+      const animeName = oneCard.dataset.name
+      sessionStorage.setItem("chosenAnimeName", animeName)
+      window.location.href = "player.html#" + encodeURIComponent(animeName)
+    })
+  })
+}
+
+    
+</script>
+
+</body>
+</html>
